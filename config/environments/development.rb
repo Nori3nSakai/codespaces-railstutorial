@@ -17,6 +17,14 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+  config.action_mailer.raise_delivery_errors = false
+
+  host = 'super-duper-broccoli-65jj96wv5x6h4vrx-3000.app.github.dev' # ここをコピペすると失敗します。自分の環境のホストに変えてください。
+  # クラウドIDEの場合は以下をお使いください
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  # localhostで開発している場合は以下をお使いください
+  # config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+
   # Add the following line to disable forgery_protection_origin_check
   config.action_controller.forgery_protection_origin_check = false
 
